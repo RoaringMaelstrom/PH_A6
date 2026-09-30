@@ -1,6 +1,9 @@
 import { Iworkout } from "@/src/app/types/Iworkout";
 import Image from "next/image";
 import MuscleBadge from "./MuscleBadge";
+import { AiOutlineClockCircle } from "react-icons/ai";
+import { AiTwotoneFire } from "react-icons/ai";
+import { AiOutlineStar } from "react-icons/ai";
 
 interface WorkoutCardProp {
     workout: Iworkout;
@@ -8,15 +11,15 @@ interface WorkoutCardProp {
 
 const WorkoutCard = ({ workout }: WorkoutCardProp) => {
     return (
-        <div className="flex flex-col gap-1 rounded-lg border border-base-300 bg-base-100 p-3">
+        <div className="flex flex-col gap-3 rounded-lg border border-base-300 bg-base-100 p-3">
 
             <div className="flex shrink-0 items-center justify-center rounded-lg bg-base-200 p-2">
                 <Image
                     src={workout.image}
                     alt={`${workout.name} logo`}
-                    width={400}
-                    height={220}
-                    className="h-full w-full object-contain"
+                    width={600}
+                    height={300}
+                    className="aspect-[13/8] object-cover"
                 />
             </div>
 
@@ -31,11 +34,21 @@ const WorkoutCard = ({ workout }: WorkoutCardProp) => {
             </div>
 
             <div className="min-w-0 pl-3">
-                <h3 className="font-bold">
+                <h1 className="font-bold text-3xl">
                     {workout.name}
-                </h3>
+                </h1>
+            </div>
 
+            <h2 className="opacity-70 pl-3">
+                {workout.equipment}
+            </h2>
 
+            <div className="border border-gray-600/50 mx-3"></div>
+
+            <div className="flex pl-3 gap-3">
+                <div className="flex gap-2"><AiOutlineClockCircle className="text-xl"/> {workout.duration}</div>
+                <div className="flex gap-2"><AiTwotoneFire className="text-xl"/>{workout.caloriesBurned} kcals</div>
+                <div className="flex gap-2"><AiOutlineStar className="text-xl"/>{workout.rating}</div>
             </div>
         </div>
     );
