@@ -1,7 +1,11 @@
 import Banner from "../components/Landing/Banner";
+import Browse from "../components/Landing/Browse";
 
 export default function Home() {
   return (
-    <Banner />
+    <div>
+      <Banner />
+      <Browse />
+    </div>
   );
 }
