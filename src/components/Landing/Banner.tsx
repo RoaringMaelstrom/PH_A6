@@ -3,7 +3,7 @@ import BannerImg from "../../assets/banner.png"
 
 const Banner = () => {
     return (
-        <div className="w-full my-10 lg:px-12 min--screen">
+        <div className="w-full my-10 md:px-12 min--screen">
             <div className="hero-content border-2 border-gray-400/20 rounded-xl bg-base-200/30 flex-col-reverse lg:flex-row-reverse py-12">
                 <Image src={BannerImg} alt='Interface Stack Image' />
                 <div className="flex flex-col gap-3">
@@ -16,7 +16,7 @@ const Banner = () => {
                         into today's plan, and watch the week's work add up.
                     </p>
                     <div className='flex py-8 gap-x-3'>
-                        <button className="btn bg-[linear-gradient(90deg,#FF5722_0%,#D81B7E_50%,#7C3AED_100%)]">Browse Workouts</button>
+                        <button className="btn bg-lime-600">Browse Workouts</button>
                     </div>
                 </div>
             </div>
