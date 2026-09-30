@@ -2,21 +2,14 @@ import Link from "next/link";
 import Logo from "../../assets/logo.png"
 import Image from "next/image";
 import { link } from "fs";
+import { NavLinks } from "./NavLinks";
 
 import PlanCounter from "./PlanCounter";
 import SavedCounter from "./SavedCounter";
 
 export default function Navbar() {
-
-    const navbarLinks = <>
-        <li><button>Workouts</button></li>
-        <li><button>My Plan</button></li>
-        <li><button>General Guidelines</button></li>
-    </>
-
-
     return (
-        <div className="max-lg:collapse lg:mb-48 lg:px-12 shadow-sm border-b-2 border-gray-400/20 w-full">
+        <div className="max-lg:collapse lg:mb-12 lg:px-12 shadow-sm border-b-2 border-gray-400/20 w-full">
             <input id="navbar-1-toggle" className="peer hidden" type="checkbox" />
             <label htmlFor="navbar-1-toggle" className="fixed inset-0 hidden max-lg:peer-checked:block"></label>
             <div className="collapse-title navbar">
@@ -39,7 +32,7 @@ export default function Navbar() {
 
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        {navbarLinks}
+                        <NavLinks/>
                     </ul>
                 </div>
 
@@ -49,10 +42,8 @@ export default function Navbar() {
                 </div>
             </div>
 
-            <div className="collapse-content lg:hidden z-1">
-                <ul className="menu">
-                    {navbarLinks}
-                </ul>
+            <div className="collapse-content lg:hidden z-1 menu">
+                    <NavLinks/>
             </div>
         </div>
     );

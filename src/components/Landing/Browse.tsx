@@ -1,6 +1,6 @@
 import { error } from "console";
 import WorkoutCard from "./WorkoutCard";
-import { Iworkout } from "@/src/app/types/Iworkout";
+import { Iworkout } from "@/src/types/Iworkout";
 
 const getWorkouts = async() => {
     try {

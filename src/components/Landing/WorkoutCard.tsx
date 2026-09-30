@@ -1,4 +1,4 @@
-import { Iworkout } from "@/src/app/types/Iworkout";
+import { Iworkout } from "@/src/types/Iworkout";
 import Image from "next/image";
 import MuscleBadge from "./MuscleBadge";
 import { AiOutlineClockCircle } from "react-icons/ai";

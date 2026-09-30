@@ -3,8 +3,8 @@ import BannerImg from "../../assets/banner.png"
 
 const Banner = () => {
     return (
-        <div className="w-full md:px-12 min--screen">
-            <div className="hero-content px-12 py-12 border-2 border-gray-400/20 rounded-xl bg-base-200/30 flex-col-reverse lg:flex-row-reverse">
+        <div className="w-full md:px-12">
+            <div className="hero-content max-w-full px-12 py-12 border-2 border-gray-400/20 rounded-xl bg-base-200/30 flex-col-reverse lg:flex-row-reverse">
                 <Image src={BannerImg} alt='Interface Stack Image' />
                 <div className="flex flex-col gap-3">
                     <p className="text-sm text-lime-600 font-bold">WORKOUT LIBRARY</p>
