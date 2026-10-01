@@ -1,5 +1,6 @@
 import Image from "next/image";
 import BannerImg from "../../assets/banner.png"
+import Link from "next/link";
 
 const Banner = () => {
     return (
@@ -14,7 +15,7 @@ const Banner = () => {
                         into today\'s plan, and watch the week\'s work add up.`}
                     </p>
                     <div className='flex py-8 gap-x-3'>
-                        <button className="btn rounded-md text-[#000000] font-bold bg-lime-600">Browse Workouts</button>
+                        <Link href="#Browse" className="btn rounded-md text-[#000000] font-bold bg-lime-600">Browse Workouts</Link>
                     </div>
                 </div>
             </div>
