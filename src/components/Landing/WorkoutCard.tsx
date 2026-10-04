@@ -28,6 +28,7 @@ const WorkoutCard = ({ workout }: WorkoutCardProp) => {
                     <MuscleBadge
                         key={muscle}
                         muscle={muscle}
+                        size="xm"
                     />
                 )
                 )}
@@ -46,7 +47,7 @@ const WorkoutCard = ({ workout }: WorkoutCardProp) => {
             <div className="border border-gray-600/50 mx-3"></div>
 
             <div className="flex pl-3 gap-3">
-                <div className="flex gap-2"><AiOutlineClockCircle className="text-xl"/> {workout.duration}</div>
+                <div className="flex gap-2"><AiOutlineClockCircle className="text-xl"/> {workout.duration} mins</div>
                 <div className="flex gap-2"><AiTwotoneFire className="text-xl"/>{workout.caloriesBurned} kcals</div>
                 <div className="flex gap-2"><AiOutlineStar className="text-xl"/>{workout.rating}</div>
             </div>

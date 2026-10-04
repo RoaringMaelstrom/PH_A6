@@ -1,6 +1,9 @@
 import Image from "next/image";
-import MuscleBadge from "@/src/components/Landing/MuscleBadge";
+
 import { Iworkout } from "@/src/types/Iworkout";
+import MuscleBadge from "@/src/components/Landing/MuscleBadge";
+import AddToSaved from "@/src/components/Buttons/AddToSaved";
+import AddToPlan from "@/src/components/Buttons/AddToPlan";
 
 const getDetails = async (workout_id: string) => {
     try {
@@ -17,33 +20,35 @@ const getDetails = async (workout_id: string) => {
 export default async function DetailsPage({ params, }: { params: Promise<{ workout_id: string }> }) {
     const { workout_id } = await params
 
-    const details:Iworkout = await getDetails(workout_id);
+    const details: Iworkout = await getDetails(workout_id);
 
     return (
-        <div className="flex px-12 pb-20 gap-10">
-            <div>
+        <div className="flex flex-col md:flex-row px-12 pb-20 gap-10">
+            <div >
                 <Image
                     src={details.image}
                     alt={`${details.name} logo`}
                     width={600}
                     height={300}
+                    className="sticky top-0"
                 />
             </div>
-            <div>
-                <h1>{details.name}</h1>
+            <div className="flex flex-col gap-8">
+                <h1 className="text-3xl font-extrabold">{details.name.toUpperCase()}</h1>
                 <p>{details.description}</p>
 
-                <div className="flex gap-2 pl-3">
+                <div className="flex gap-2 text-6xl">
                     {details.muscleGroups.map((muscle: string) => (
                         <MuscleBadge
                             key={muscle}
                             muscle={muscle}
+                            size="lg"
                         />
                     )
                     )}
                 </div>
 
-                <ul className="list bg-base-100 rounded-box shadow-md   ">
+                <ul className="list bg-base-100 rounded-box shadow-md">
                     <li className="list-row flex justify-between">
                         <span>EQUIPMENT</span>
                         <span>{details.equipment}</span>
@@ -79,6 +84,20 @@ export default async function DetailsPage({ params, }: { params: Promise<{ worko
                         <span>{details.rating}</span>
                     </li>
                 </ul>
+
+                <div className="flex flex-col gap-3">
+                    <h1 className="text-xl font-bold">INSTRUCTIONS</h1>
+                    {details.instructions.map((instruction: string, index: number) => (
+                        <h1 key={index}>{index + 1}. {instruction}</h1>
+                    )
+                    )}
+                </div>
+
+                <div className="flex flex-col lg:flex-row w-full flex gap-5">
+                    <AddToPlan workout={details}></AddToPlan>
+
+                    <AddToSaved workout={details}></AddToSaved>
+                </div>
             </div>
         </div>
     )

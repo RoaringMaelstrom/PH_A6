@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Logo from "../../assets/logo.png"
 import Image from "next/image";
-import { link } from "fs";
 import { NavLinks } from "./NavLinks";
 
 import PlanCounter from "./PlanCounter";
@@ -32,7 +31,7 @@ export default function Navbar() {
 
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <NavLinks/>
+                        <NavLinks />
                     </ul>
                 </div>
 
@@ -43,7 +42,7 @@ export default function Navbar() {
             </div>
 
             <div className="collapse-content lg:hidden z-1 menu">
-                    <NavLinks/>
+                <NavLinks />
             </div>
         </div>
     );

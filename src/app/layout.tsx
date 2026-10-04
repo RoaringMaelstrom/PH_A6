@@ -5,6 +5,9 @@ import { Toaster } from "react-hot-toast";
 import Navbar from "../components/Shared/Navbar";
 import Footer from "../components/Shared/Footer";
 
+import PlannedWorkoutProvider from "../context/PlannedWorkoutContext";
+import SavedWorkoutProvider from "../context/SavedWorkoutContext";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -28,9 +31,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
 
       <body className="min-h-full flex flex-col">
+        <SavedWorkoutProvider>
+        <PlannedWorkoutProvider>
         <Navbar  />
         <Toaster />
         {children}
+        </PlannedWorkoutProvider>
+        </SavedWorkoutProvider>
         <Footer />
       </body>
     </html>

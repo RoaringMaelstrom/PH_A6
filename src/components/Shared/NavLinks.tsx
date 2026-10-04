@@ -18,13 +18,6 @@ export function NavLinks() {
       >
         My Plans
       </Link>
-
-      <Link
-        className={`link ${pathname === '/general_guidelines' ? 'bg-lime-600' : ''} rounded-full px-3 py-1`}
-        href="/general_guidelines"
-      >
-        General Guidelines
-      </Link>
     </nav>
   )
 }

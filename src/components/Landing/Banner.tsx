@@ -14,6 +14,7 @@ const Banner = () => {
                         {`FitLog is a dark, no-nonsense gym companion: pick a lift, lock it
                         into today\'s plan, and watch the week\'s work add up.`}
                     </p>
+                    
                     <div className='flex py-8 gap-x-3'>
                         <Link href="#Browse" className="btn rounded-md text-[#000000] font-bold bg-lime-600">Browse Workouts</Link>
                     </div>
