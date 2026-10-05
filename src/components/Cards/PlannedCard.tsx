@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-
-import { AiOutlineClockCircle, AiTwotoneFire, AiOutlineStar } from "react-icons/ai";
+import { AiOutlineCheck, AiOutlineClockCircle, AiTwotoneFire, AiOutlineStar } from "react-icons/ai";
 
 import { Iworkout } from "@/src/types/Iworkout";
 import { usePlannedWorkout } from "@/src/context/PlannedWorkoutContext";
@@ -50,8 +49,10 @@ function PlannedCard({ workout }: SavedCardProp) {
             </Link>
 
             <button
+
                 onClick={() => toast.success("Perfect. Now rest for 5 minutes and then move on.")}
                 className="btn rounded-full text-[#000000] bg-lime-600">
+                <AiOutlineCheck />
                 Mark as Done
             </button>
             <button

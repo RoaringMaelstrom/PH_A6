@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
+import { Suspense } from "react";
+
 import Navbar from "../components/Shared/Navbar";
 import Footer from "../components/Shared/Footer";
+import Loading from "./loading";
 
 import PlannedWorkoutProvider from "../context/PlannedWorkoutContext";
 import SavedWorkoutProvider from "../context/SavedWorkoutContext";
@@ -32,11 +35,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 
       <body className="min-h-full flex flex-col">
         <SavedWorkoutProvider>
-        <PlannedWorkoutProvider>
-        <Navbar  />
-        <Toaster />
-        {children}
-        </PlannedWorkoutProvider>
+          <PlannedWorkoutProvider>
+            <Suspense fallback={<Loading />}>
+              <Navbar />
+              <Toaster />
+              {children}
+            </Suspense>
+          </PlannedWorkoutProvider>
         </SavedWorkoutProvider>
         <Footer />
       </body>
